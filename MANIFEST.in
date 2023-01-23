@@ -1,0 +1,2 @@
+recursive-include dash_flexlayout/** *.js *.css *.json *.html
+prune tests
