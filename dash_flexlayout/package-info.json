@@ -43,5 +43,8 @@
     "react-dom": "^16.13.0"
   },
   "author": "Ben Weise <ben.weise@gmail.com>",
-  "license": ""
+  "license": "",
+  "dependencies": {
+    "flexlayout-react": "^0.7.5"
+  }
 }
