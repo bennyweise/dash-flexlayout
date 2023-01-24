@@ -12,7 +12,7 @@ const FlexLayout = (props: Props) => {
     const { id } = props;
     return (
         <div id={id}>
-            {/* Insert code */}
+            {"This is a FlexLayout component"}
         </div>
     )
 }
