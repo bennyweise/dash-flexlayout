@@ -3,6 +3,53 @@
     "displayName": "FlexLayout",
     "description": "Component description",
     "props": {
+      "config": {
+        "description": "Layout config",
+        "required": true,
+        "type": {
+          "name": "any",
+          "raw": "any"
+        }
+      },
+      "children": {
+        "description": "Layout nodes",
+        "required": true,
+        "type": {
+          "name": "node",
+          "raw": "Element"
+        }
+      },
+      "id": {
+        "description": "Unique ID to identify this component in Dash callbacks.",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "setProps": {
+        "description": "Update props to trigger callbacks.",
+        "required": true,
+        "type": {
+          "name": "func",
+          "raw": "(props: Record<string, any>) => void"
+        }
+      }
+    },
+    "isContext": false
+  },
+  "src/ts/components/Tab.tsx": {
+    "displayName": "Tab",
+    "description": "Component description",
+    "props": {
+      "children": {
+        "description": "Children",
+        "required": true,
+        "type": {
+          "name": "node",
+          "raw": "Element"
+        }
+      },
       "id": {
         "description": "Unique ID to identify this component in Dash callbacks.",
         "required": false,

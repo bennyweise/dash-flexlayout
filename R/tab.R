@@ -1,17 +1,17 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-flexLayout <- function(children=NULL, id=NULL, config=NULL) {
+tab <- function(children=NULL, id=NULL) {
     
-    props <- list(children=children, id=id, config=config)
+    props <- list(children=children, id=id)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
     component <- list(
         props = props,
-        type = 'FlexLayout',
+        type = 'Tab',
         namespace = 'dash_flexlayout',
-        propNames = c('children', 'id', 'config'),
+        propNames = c('children', 'id'),
         package = 'dashFlexlayout'
         )
 

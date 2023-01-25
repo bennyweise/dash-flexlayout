@@ -45,6 +45,7 @@
   "author": "Ben Weise <ben.weise@gmail.com>",
   "license": "",
   "dependencies": {
+    "dash-extensions-js": "^0.0.8",
     "flexlayout-react": "^0.7.5"
   }
 }
