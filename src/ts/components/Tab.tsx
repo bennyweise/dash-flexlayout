@@ -5,10 +5,15 @@ import { IJsonModel } from "flexlayout-react";
 
 type Props = {
   /**
+   * Unique ID to identify this component in Dash callbacks.
+   */
+  id: string;
+
+  /**
    * Children to render within Tab
    */
-  children: JSX.Element;
-} & DashComponentProps;
+  children?: React.ReactNode;
+};
 
 /**
  * This is a simple component that holds content to be rendered within a Tab.

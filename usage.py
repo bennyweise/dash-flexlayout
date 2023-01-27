@@ -80,15 +80,15 @@ config = {
 # }
 
 nodes = [
-    html.Div(id="tab-1", children=[
+    dfl.Tab(id="tab-1", children=[
         "this is tab 1",
         html.Div(id="button-3-output")
         ]),
-    html.Div(id="tab-2", children=[
+    dfl.Tab(id="tab-2", children=[
         "this is TAB2!",
         html.Div(id="layout-model")
         ]),
-    html.Div(id="tab-3", children=[
+    dfl.Tab(id="tab-3", children=[
             "this is a div in tab 3! :)",
             html.Button(id="button-3", children="Click me"),
             

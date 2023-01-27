@@ -1,11 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-// import FlexLayout from '../ts/components/FlexLayout';
-import { FlexLayout } from "../ts/index";
-// import FlexLayout from "flexlayout-react";
+import { FlexLayout, Tab } from "../ts/index";
 
-import "flexlayout-react/style/light.css";
+// import "flexlayout-react/style/light.css";
 
 var json = {
   global: { tabEnableClose: false, tabEnableFloat: true },
@@ -91,8 +89,8 @@ Primary.args = {
   label: "FlexLayout",
   model: json,
   children: [
-    <div id={"tab-1"}>{"something here"}</div>,
-    <div id={"tab-2"}>{"something here in tab 2"}</div>,
-    <div id={"tab-3"}>{"something here in tab 3"}</div>,
+    <Tab id={"tab-1"}>{"something here"}</Tab>,
+    <Tab id={"tab-2"}>{"something here in tab 2"}</Tab>,
+    <Tab id={"tab-3"}>{"something here in tab 3"}</Tab>,
   ],
 };
