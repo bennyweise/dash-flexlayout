@@ -1,12 +1,2 @@
-include dash_flexlayout/dash_flexlayout.min.js
-include dash_flexlayout/dash_flexlayout.min.js.map
-include dash_flexlayout/async-*.js
-include dash_flexlayout/async-*.js.map
-include dash_flexlayout/*-shared.js
-include dash_flexlayout/*-shared.js.map
-include dash_flexlayout/*.png
-include dash_flexlayout/metadata.json
-include dash_flexlayout/package-info.json
-include README.md
-include LICENSE
-include package.json
+recursive-include dash_flexlayout/** *.js *.css *.json *.html
+prune tests

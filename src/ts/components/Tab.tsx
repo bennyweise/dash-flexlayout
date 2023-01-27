@@ -1,35 +1,24 @@
-import React from 'react';
-import {DashComponentProps} from '../props';
+import React from "react";
+import { DashComponentProps } from "../props";
 import * as CaplinFlexLayout from "flexlayout-react";
-import { IJsonModel } from 'flexlayout-react';
-
-import 'flexlayout-react/style/light.css';
-
-// import { IJsonModel } from 'flexlayout-react';
-
-// type IJsonModel = {
-//     global?: CaplinFlexLayout.;
-//     borders?: CaplinFlexLayout.BorderNode[];
-//     layout: CaplinFlexLayout.RowNode;
-// }
+import { IJsonModel } from "flexlayout-react";
 
 type Props = {
-    /**
-     * Children
-     */
-    children: JSX.Element
+  /**
+   * Children to render within Tab
+   */
+  children: JSX.Element;
 } & DashComponentProps;
 
 /**
- * Component description
+ * This is a simple component that holds content to be rendered within a Tab.
+ * Takes an ID that corresponds to a particular tab in the layout.
  */
 const Tab = (props: Props) => {
-    const { id, children} = props;
+  const { id, children } = props;
 
-    return (
-        <React.Fragment>{children}</React.Fragment>
-    )
-}
+  return <React.Fragment>{children}</React.Fragment>;
+};
 
 Tab.defaultProps = {};
 

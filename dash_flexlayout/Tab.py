@@ -5,12 +5,13 @@ from dash.development.base_component import Component, _explicitize_args
 
 class Tab(Component):
     """A Tab component.
-Component description
+This is a simple component that holds content to be rendered within a Tab.
+Takes an ID that corresponds to a particular tab in the layout.
 
 Keyword arguments:
 
 - children (a list of or a singular dash component, string or number; required):
-    Children.
+    Children to render within Tab.
 
 - id (string; optional):
     Unique ID to identify this component in Dash callbacks."""

@@ -9,9 +9,10 @@ export tab
 
 
 A Tab component.
-Component description
+This is a simple component that holds content to be rendered within a Tab.
+Takes an ID that corresponds to a particular tab in the layout.
 Keyword arguments:
-- `children` (a list of or a singular dash component, string or number; required): Children
+- `children` (a list of or a singular dash component, string or number; required): Children to render within Tab
 - `id` (String; optional): Unique ID to identify this component in Dash callbacks.
 """
 function tab(; kwargs...)
