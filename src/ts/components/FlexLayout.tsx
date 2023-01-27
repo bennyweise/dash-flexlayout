@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import { DashComponentProps } from "../props";
 import * as CaplinFlexLayout from "flexlayout-react";
-import { IJsonModel } from "flexlayout-react";
 import { renderDashComponents } from "dash-extensions-js";
 
 import "flexlayout-react/style/light.css";
-
-// import { IJsonModel } from 'flexlayout-react';
-
-// type IJsonModel = {
-//     global?: CaplinFlexLayout.;
-//     borders?: CaplinFlexLayout.BorderNode[];
-//     layout: CaplinFlexLayout.RowNode;
-// }
 
 type Props = {
   /**
