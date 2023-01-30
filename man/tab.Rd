@@ -10,13 +10,15 @@ This is a simple component that holds content to be rendered within a Tab. Takes
 }
 
 \usage{
-tab(children=NULL, id=NULL)
+tab(children=NULL, id=NULL, rendered=NULL)
 }
 
 \arguments{
 \item{children}{A list of or a singular dash component, string or number. Children to render within Tab}
 
 \item{id}{Character. Unique ID to identify this component in Dash callbacks.}
+
+\item{rendered}{Logical. Has rendered prop}
 }
 
 \value{named list of JSON elements corresponding to React.js properties and their values}

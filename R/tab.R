@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-tab <- function(children=NULL, id=NULL) {
+tab <- function(children=NULL, id=NULL, rendered=NULL) {
     
-    props <- list(children=children, id=id)
+    props <- list(children=children, id=id, rendered=rendered)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@ tab <- function(children=NULL, id=NULL) {
         props = props,
         type = 'Tab',
         namespace = 'dash_flexlayout',
-        propNames = c('children', 'id'),
+        propNames = c('children', 'id', 'rendered'),
         package = 'dashFlexlayout'
         )
 

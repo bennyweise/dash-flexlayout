@@ -81,7 +81,7 @@
       },
       "setProps": {
         "description": "Update props to trigger callbacks.",
-        "required": true,
+        "required": false,
         "type": {
           "name": "func",
           "raw": "(props: Record<string, any>) => void"
@@ -94,25 +94,33 @@
     "displayName": "Tab",
     "description": "This is a simple component that holds content to be rendered within a Tab.\nTakes an ID that corresponds to a particular tab in the layout.",
     "props": {
-      "children": {
-        "description": "Children to render within Tab",
-        "required": true,
-        "type": {
-          "name": "node",
-          "raw": "Element"
-        }
-      },
       "id": {
         "description": "Unique ID to identify this component in Dash callbacks.",
-        "required": false,
+        "required": true,
         "type": {
           "name": "string",
           "raw": "string"
         }
       },
+      "children": {
+        "description": "Children to render within Tab",
+        "required": false,
+        "type": {
+          "name": "node",
+          "raw": "ReactNode"
+        }
+      },
+      "rendered": {
+        "description": "Has rendered prop",
+        "required": false,
+        "type": {
+          "name": "bool",
+          "raw": "boolean"
+        }
+      },
       "setProps": {
         "description": "Update props to trigger callbacks.",
-        "required": true,
+        "required": false,
         "type": {
           "name": "func",
           "raw": "(props: Record<string, any>) => void"

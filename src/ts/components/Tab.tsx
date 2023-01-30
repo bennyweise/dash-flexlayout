@@ -13,18 +13,33 @@ type Props = {
    * Children to render within Tab
    */
   children?: React.ReactNode;
-};
+
+  /**
+   * Has rendered prop
+   */
+  rendered?: boolean;
+} & DashComponentProps;
 
 /**
  * This is a simple component that holds content to be rendered within a Tab.
  * Takes an ID that corresponds to a particular tab in the layout.
  */
 const Tab = (props: Props) => {
-  const { id, children } = props;
-
+  const { id, children, setProps } = props;
+  // Updates on first rendering
+  //   setProps && setProps({ rendered: true });
   return <React.Fragment>{children}</React.Fragment>;
 };
 
 Tab.defaultProps = {};
 
-export default Tab;
+const areEqual = (prevProps, nextProps) => {
+  console.log("Checking for Tab re-render");
+  console.log(prevProps);
+  if (prevProps.heading === nextProps.heading) {
+    return true; // donot re-render
+  }
+  return true; // will re-render
+};
+
+export default React.memo(Tab, areEqual);
