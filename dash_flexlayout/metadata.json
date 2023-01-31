@@ -55,6 +55,22 @@
           "raw": "Element"
         }
       },
+      "headers": {
+        "description": "Map of headers to render for each tab. Uses the `onRenderTab` function to override\nthe default headers, where a custom header mapping is supplied.\n\nNote: where possible, it is likely better to use the",
+        "required": false,
+        "type": {
+          "name": "shape",
+          "value": {
+            "string": {
+              "description": "",
+              "required": true,
+              "name": "node",
+              "raw": "Element"
+            }
+          },
+          "raw": "{ string: Element; }"
+        }
+      },
       "useStateForModel": {
         "description": "Flag that we should use internal state to manage the layout. If the layout is not being\nused by dash anywhere (for example, saving and re-hydrating the layout), it is more efficient\nto use the internal state (as this limits the number of round trips between JSON\nand the Model object).\n\nWARNING: If you set this, do not expect the dash property `model` to reflect the current\nstate of the layout!",
         "required": false,
@@ -94,28 +110,20 @@
     "displayName": "Tab",
     "description": "This is a simple component that holds content to be rendered within a Tab.\nTakes an ID that corresponds to a particular tab in the layout.",
     "props": {
-      "children": {
-        "description": "Children to render within Tab",
-        "required": true,
-        "type": {
-          "name": "node",
-          "raw": "Element"
-        }
-      },
       "id": {
         "description": "Unique ID to identify this component in Dash callbacks.",
-        "required": false,
+        "required": true,
         "type": {
           "name": "string",
           "raw": "string"
         }
       },
-      "setProps": {
-        "description": "Update props to trigger callbacks.",
-        "required": true,
+      "children": {
+        "description": "Children to render within Tab",
+        "required": false,
         "type": {
-          "name": "func",
-          "raw": "(props: Record<string, any>) => void"
+          "name": "node",
+          "raw": "ReactNode"
         }
       }
     },

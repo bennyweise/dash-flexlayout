@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { DashComponentProps } from "../props";
 import * as CaplinFlexLayout from "flexlayout-react";
-import { renderDashComponents } from "dash-extensions-js";
+import { renderDashComponents, renderDashComponent } from "dash-extensions-js";
 
 import "flexlayout-react/style/light.css";
+import { TabSetNode } from "flexlayout-react";
 
 type Props = {
   /**
@@ -41,6 +42,14 @@ type Props = {
    * rendering (although callbacks will still be applied).
    */
   children: JSX.Element;
+
+  /**
+   * Map of headers to render for each tab. Uses the `onRenderTab` function to override
+   * the default headers, where a custom header mapping is supplied.
+   *
+   * Note: where possible, it is likely better to use the
+   */
+  headers?: { string: JSX.Element };
 
   /**
    * Flag that we should use internal state to manage the layout. If the layout is not being
@@ -83,7 +92,15 @@ const getMatchingChildren = (
  * Component description
  */
 const FlexLayout = (props: Props) => {
-  const { id, model, children, setProps, useStateForModel, ...flProps } = props;
+  const {
+    id,
+    model,
+    children,
+    headers,
+    setProps,
+    useStateForModel,
+    ...flProps
+  } = props;
   const [modelState, setModelState] = useState(
     CaplinFlexLayout.Model.fromJson(model)
   );
@@ -106,6 +123,23 @@ const FlexLayout = (props: Props) => {
     setProps && !useStateForModel && setProps({ model: model.toJson() });
   };
 
+  /**
+   * Customise rendering of the tab to use the `headers` map
+   * if available.
+   */
+  const onRenderTab = (
+    node: CaplinFlexLayout.TabNode,
+    renderValues: CaplinFlexLayout.ITabRenderValues
+  ) => {
+    if (headers && headers[node.getId()]) {
+      const header = headers[node.getId()];
+      renderValues.content =
+        header.props && header.props._dashprivate_layout
+          ? renderDashComponent(headers[node.getId()])
+          : header;
+    }
+  };
+
   const factory = (node: CaplinFlexLayout.TabNode) => {
     const matchedChildren = getMatchingChildren(children, node);
     return <React.Fragment>{matchedChildren}</React.Fragment>;
@@ -115,6 +149,7 @@ const FlexLayout = (props: Props) => {
       model={getModel()}
       factory={factory}
       onModelChange={onModelChange}
+      onRenderTab={onRenderTab}
       {...flProps}
     />
   );

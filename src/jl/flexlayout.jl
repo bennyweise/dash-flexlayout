@@ -20,6 +20,12 @@ rendering (although callbacks will still be applied).
 - `id` (String; optional): Unique ID to identify this component in Dash callbacks.
 - `debugMode` (Bool; optional)
 - `font` (Bool | Real | String | Dict | Array; optional): the tab font (overrides value in css). Example: font={{size:"12px", style:"italic"}}
+- `headers` (optional): Map of headers to render for each tab. Uses the `onRenderTab` function to override
+the default headers, where a custom header mapping is supplied.
+
+Note: where possible, it is likely better to use the. headers has the following type: lists containing elements 'string'.
+Those elements have the following types:
+  - `string` (a list of or a singular dash component, string or number; required)
 - `model` (Bool | Real | String | Dict | Array; required): Model layout.
 - `popoutURL` (String; optional): URL of popout window relative to origin, defaults to popout.html
 - `realtimeResize` (Bool; optional): boolean value, defaults to false, resize tabs as splitters are dragged. Warning: this can cause resizing to become choppy when tabs are slow to draw
@@ -33,7 +39,7 @@ WARNING: If you set this, do not expect the dash property `model` to reflect the
 state of the layout!
 """
 function flexlayout(; kwargs...)
-        available_props = Symbol[:children, :id, :debugMode, :font, :model, :popoutURL, :realtimeResize, :supportsPopout, :useStateForModel]
+        available_props = Symbol[:children, :id, :debugMode, :font, :headers, :model, :popoutURL, :realtimeResize, :supportsPopout, :useStateForModel]
         wild_props = Symbol[]
         return Component("flexlayout", "FlexLayout", "dash_flexlayout", available_props, wild_props; kwargs...)
 end

@@ -10,17 +10,17 @@ Takes an ID that corresponds to a particular tab in the layout.
 
 Keyword arguments:
 
-- children (a list of or a singular dash component, string or number; required):
+- children (a list of or a singular dash component, string or number; optional):
     Children to render within Tab.
 
-- id (string; optional):
+- id (string; required):
     Unique ID to identify this component in Dash callbacks."""
     _children_props = []
     _base_nodes = ['children']
     _namespace = 'dash_flexlayout'
     _type = 'Tab'
     @_explicitize_args
-    def __init__(self, children=None, id=Component.UNDEFINED, **kwargs):
+    def __init__(self, children=None, id=Component.REQUIRED, **kwargs):
         self._prop_names = ['children', 'id']
         self._valid_wildcard_attributes =            []
         self.available_properties = ['children', 'id']
@@ -30,7 +30,9 @@ Keyword arguments:
         _locals.update(kwargs)  # For wildcard attrs and excess named props
         args = {k: _locals[k] for k in _explicit_args if k != 'children'}
 
-        if 'children' not in _explicit_args:
-            raise TypeError('Required argument children was not specified.')
+        for k in ['id']:
+            if k not in args:
+                raise TypeError(
+                    'Required argument `' + k + '` was not specified.')
 
         super(Tab, self).__init__(children=children, **args)

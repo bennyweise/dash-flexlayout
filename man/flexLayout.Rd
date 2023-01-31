@@ -11,8 +11,9 @@ Component description
 
 \usage{
 flexLayout(children=NULL, id=NULL, debugMode=NULL, font=NULL,
-model=NULL, popoutURL=NULL, realtimeResize=NULL,
-supportsPopout=NULL, useStateForModel=NULL)
+headers=NULL, model=NULL, popoutURL=NULL,
+realtimeResize=NULL, supportsPopout=NULL,
+useStateForModel=NULL)
 }
 
 \arguments{
@@ -28,6 +29,13 @@ rendering (although callbacks will still be applied).}
 \item{debugMode}{Logical. }
 
 \item{font}{Logical | numeric | character | named list | unnamed list. the tab font (overrides value in css). Example: font={{size:"12px", style:"italic"}}}
+
+\item{headers}{Lists containing elements 'string'.
+those elements have the following types:
+  - string (a list of or a singular dash component, string or number; required). Map of headers to render for each tab. Uses the `onRenderTab` function to override
+the default headers, where a custom header mapping is supplied.
+
+Note: where possible, it is likely better to use the}
 
 \item{model}{Logical | numeric | character | named list | unnamed list. Model layout.}
 

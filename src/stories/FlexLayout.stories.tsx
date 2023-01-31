@@ -94,3 +94,21 @@ Primary.args = {
     <Tab id={"tab-3"}>{"something here in tab 3"}</Tab>,
   ],
 };
+
+export const CustomTabHeader = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+CustomTabHeader.args = {
+  primary: false,
+  label: "Custom Header",
+  model: json,
+  children: [
+    <Tab id={"tab-1"}>{"something here"}</Tab>,
+    <Tab id={"tab-2"}>{"something here in tab 2"}</Tab>,
+    <Tab id={"tab-3"}>{"something here in tab 3"}</Tab>,
+  ],
+  headers: {
+    "tab-1": <h4>{"This is a custom tab 2 header"}</h4>,
+    "tab-2": <h4>{"This is a custom tab 2 header"}</h4>,
+    "tab-3": <h4>{"This is a custom tab 2 header"}</h4>,
+  },
+};
