@@ -1,9 +1,9 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 #' @export
-flexLayout <- function(id=NULL) {
+flexLayout <- function(children=NULL, id=NULL, debugMode=NULL, font=NULL, headers=NULL, model=NULL, popoutURL=NULL, realtimeResize=NULL, supportsPopout=NULL, useStateForModel=NULL) {
     
-    props <- list(id=id)
+    props <- list(children=children, id=id, debugMode=debugMode, font=font, headers=headers, model=model, popoutURL=popoutURL, realtimeResize=realtimeResize, supportsPopout=supportsPopout, useStateForModel=useStateForModel)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -11,7 +11,7 @@ flexLayout <- function(id=NULL) {
         props = props,
         type = 'FlexLayout',
         namespace = 'dash_flexlayout',
-        propNames = c('id'),
+        propNames = c('children', 'id', 'debugMode', 'font', 'headers', 'model', 'popoutURL', 'realtimeResize', 'supportsPopout', 'useStateForModel'),
         package = 'dashFlexlayout'
         )
 

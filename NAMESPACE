@@ -1,4 +1,6 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 export(FlexLayout)
+export(Tab)
 export(flexLayout)
+export(tab)

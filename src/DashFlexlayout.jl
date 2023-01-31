@@ -6,6 +6,7 @@ const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
 const version = "1.0.0"
 
 include("jl/flexlayout.jl")
+include("jl/tab.jl")
 
 function __init__()
     DashBase.register_package(
