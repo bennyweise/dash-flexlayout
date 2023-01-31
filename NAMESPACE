@@ -1,6 +1,10 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
 export(FlexLayout)
+export(MantineProvider)
+export(MyComponent)
 export(Tab)
+export(myComponent)
 export(flexLayout)
+export(mantineProvider)
 export(tab)

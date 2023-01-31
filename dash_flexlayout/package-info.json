@@ -45,6 +45,9 @@
   "author": "Ben Weise <ben.weise@gmail.com>",
   "license": "",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@mantine/core": "^5.10.2",
+    "@mantine/hooks": "^5.10.2",
     "dash-extensions-js": "^0.0.8",
     "flexlayout-react": "^0.7.5"
   }

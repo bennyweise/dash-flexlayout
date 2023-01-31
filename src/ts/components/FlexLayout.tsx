@@ -3,8 +3,15 @@ import { DashComponentProps } from "../props";
 import * as CaplinFlexLayout from "flexlayout-react";
 import { renderDashComponents, renderDashComponent } from "dash-extensions-js";
 
+import { DefaultProps, Selectors, MantineNumberSize, Box } from "@mantine/core";
+import useStyles, { MyComponentStylesParams } from "./FlexLayout.styles";
+
 import "flexlayout-react/style/light.css";
 import { TabSetNode } from "flexlayout-react";
+
+// This type will contain a union with all selectors defined in useStyles,
+// in this case it will be `'root' | 'title' | 'description'`
+type FlexLayoutStylesNames = Selectors<typeof useStyles>;
 
 type Props = {
   /**

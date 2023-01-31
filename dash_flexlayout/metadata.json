@@ -106,6 +106,75 @@
     },
     "isContext": false
   },
+  "src/ts/components/MantineProvider.tsx": {
+    "displayName": "MantineProvider",
+    "description": "Mantine Provider",
+    "props": {
+      "id": {
+        "description": "Unique ID to identify this component in Dash callbacks.",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "theme": {
+        "description": "Theme",
+        "required": false,
+        "type": {
+          "name": "object",
+          "raw": "object"
+        }
+      },
+      "withNormalizeCSS": {
+        "description": "Normalize CSS",
+        "required": false,
+        "type": {
+          "name": "bool",
+          "raw": "boolean"
+        }
+      },
+      "withGlobalStyles": {
+        "description": "With global styles",
+        "required": false,
+        "type": {
+          "name": "bool",
+          "raw": "boolean"
+        }
+      },
+      "withCSSVariables": {
+        "description": "With css variables",
+        "required": false,
+        "type": {
+          "name": "bool",
+          "raw": "boolean"
+        }
+      },
+      "children": {
+        "description": "Children",
+        "required": false,
+        "type": {
+          "name": "node",
+          "raw": "ReactNode"
+        }
+      },
+      "inherit": {
+        "description": "Inherit from one level up MantineProvider",
+        "required": false,
+        "type": {
+          "name": "bool",
+          "raw": "boolean"
+        }
+      }
+    },
+    "isContext": false
+  },
+  "src/ts/components/MyComponent.tsx": {
+    "displayName": "MyComponent",
+    "description": "Test component for theming",
+    "props": {},
+    "isContext": false
+  },
   "src/ts/components/Tab.tsx": {
     "displayName": "Tab",
     "description": "This is a simple component that holds content to be rendered within a Tab.\nTakes an ID that corresponds to a particular tab in the layout.",
