@@ -23,7 +23,8 @@ rendering (although callbacks will still be applied).
 - `headers` (optional): Map of headers to render for each tab. Uses the `onRenderTab` function to override
 the default headers, where a custom header mapping is supplied.
 
-Note: where possible, it is likely better to use the. headers has the following type: lists containing elements 'string'.
+Note: where possible, it is likely better to use classes to style the headers, rather than
+using this prop.. headers has the following type: lists containing elements 'string'.
 Those elements have the following types:
   - `string` (a list of or a singular dash component, string or number; required)
 - `model` (Bool | Real | String | Dict | Array; required): Model layout.

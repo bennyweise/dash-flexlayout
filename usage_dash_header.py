@@ -71,9 +71,9 @@ nodes = [
 ]
 
 headers = {
-    "tab-1": dmc.Title("Tab 2!", order=4),
+    "tab-1": dmc.Title("Tab 1!", order=3),
     "tab-2": dmc.Title("Tab 2!", order=4),
-    "tab-3": dmc.Title("Tab 2!", order=4),
+    "tab-3": dmc.Title("Tab 3!", order=5),
 }
 
 app.layout = dfl.FlexLayout(
@@ -81,7 +81,7 @@ app.layout = dfl.FlexLayout(
     model=config,
     children=nodes,
     useStateForModel=True,
-    # headers=headers,
+    headers=headers,
 )
 
 

@@ -3,7 +3,7 @@ module DashFlexlayout
 using Dash
 
 const resources_path = realpath(joinpath( @__DIR__, "..", "deps"))
-const version = "1.0.0"
+const version = "0.0.1"
 
 include("jl/flexlayout.jl")
 include("jl/tab.jl")

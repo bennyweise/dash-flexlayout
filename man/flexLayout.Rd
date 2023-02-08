@@ -35,7 +35,8 @@ those elements have the following types:
   - string (a list of or a singular dash component, string or number; required). Map of headers to render for each tab. Uses the `onRenderTab` function to override
 the default headers, where a custom header mapping is supplied.
 
-Note: where possible, it is likely better to use the}
+Note: where possible, it is likely better to use classes to style the headers, rather than
+using this prop.}
 
 \item{model}{Logical | numeric | character | named list | unnamed list. Model layout.}
 

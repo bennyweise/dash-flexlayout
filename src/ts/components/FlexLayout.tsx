@@ -47,7 +47,8 @@ type Props = {
    * Map of headers to render for each tab. Uses the `onRenderTab` function to override
    * the default headers, where a custom header mapping is supplied.
    *
-   * Note: where possible, it is likely better to use the
+   * Note: where possible, it is likely better to use classes to style the headers, rather than
+   * using this prop.
    */
   headers?: { string: JSX.Element };
 
@@ -134,9 +135,7 @@ const FlexLayout = (props: Props) => {
     if (headers && headers[node.getId()]) {
       const header = headers[node.getId()];
       renderValues.content =
-        header.props && header.props._dashprivate_layout
-          ? renderDashComponent(headers[node.getId()])
-          : header;
+        header.props && header.namespace ? renderDashComponent(header) : header;
     }
   };
 

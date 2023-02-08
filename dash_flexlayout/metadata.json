@@ -56,7 +56,7 @@
         }
       },
       "headers": {
-        "description": "Map of headers to render for each tab. Uses the `onRenderTab` function to override\nthe default headers, where a custom header mapping is supplied.\n\nNote: where possible, it is likely better to use the",
+        "description": "Map of headers to render for each tab. Uses the `onRenderTab` function to override\nthe default headers, where a custom header mapping is supplied.\n\nNote: where possible, it is likely better to use classes to style the headers, rather than\nusing this prop.",
         "required": false,
         "type": {
           "name": "shape",
