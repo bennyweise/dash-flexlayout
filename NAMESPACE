@@ -1,6 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
+export(DragFrom)
 export(FlexLayout)
 export(Tab)
 export(flexLayout)
+export(dragFrom)
 export(tab)

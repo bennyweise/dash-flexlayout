@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DashComponentProps } from "../props";
 import * as CaplinFlexLayout from "flexlayout-react";
 import { renderDashComponents, renderDashComponent } from "dash-extensions-js";
+import { DragDrop } from "flexlayout-react";
 
 import "flexlayout-react/style/light.css";
 import { TabSetNode } from "flexlayout-react";
@@ -139,6 +140,67 @@ const FlexLayout = (props: Props) => {
     }
   };
 
+  const onExternalDragDrop = (e: React.DragEvent) => {
+    console.log("onExternaldrag ", e.dataTransfer.types[0]);
+    console.log("onExternaldrag ", e.dataTransfer.items[0]);
+    console.log("onExternaldrag ", e.dataTransfer.getData("text/x-tab-name"));
+    console.log("onExternaldrag ", e.dataTransfer);
+    console.log("e", e);
+    // Check for supported content type
+    const validTypes = ["text/uri-list", "text/html", "text/plain"];
+    // if (
+    //   e.dataTransfer.types.find((t) => validTypes.indexOf(t) !== -1) ===
+    //   undefined
+    // )
+    //   return;
+    // Set dropEffect (icon)
+    if (e instanceof DragEvent) {
+      const dragEvent = e as DragEvent;
+      const name = dragEvent.dataTransfer!.getData("text/x-tab-name");
+      console.log("name", name);
+    }
+
+    e.dataTransfer.dropEffect = "link";
+    return {
+      dragText: "Drag To New Tab",
+      json: {
+        type: "tab",
+        component: "multitype",
+        // Note: since the dataTransfer object is not available until the drop event,
+        // we default to creating a 'New Tab' here.
+        name: "New Tab",
+      },
+      onDrop: (node?: CaplinFlexLayout.Node, event?: Event) => {
+        console.log("dropping on ", node);
+        console.log(node);
+        console.log(event);
+        if (!node || !event) return; // aborted drag
+
+        if (
+          node instanceof CaplinFlexLayout.TabNode &&
+          event instanceof DragEvent
+        ) {
+          const dragEvent = event as DragEvent;
+          const name = dragEvent.dataTransfer!.getData("text/x-tab-name");
+          console.log(name);
+          const result = getModel()!.doAction(
+            CaplinFlexLayout.Actions.renameTab(node.getId(), name)
+            // CaplinFlexLayout.Actions.updateNodeAttributes(node.getId(), {
+            //   name: name,
+            //   component: "text",
+            //   config: { name: name, type: "url" },
+            // })
+          );
+          console.log(result);
+          getModel()!.doAction(
+            CaplinFlexLayout.Actions.renameTab(node.getId(), name)
+          );
+          //   setProps && setProps({ model: getModel() });
+        }
+      },
+    };
+  };
+
   const factory = (node: CaplinFlexLayout.TabNode) => {
     const matchedChildren = getMatchingChildren(children, node);
     return <React.Fragment>{matchedChildren}</React.Fragment>;
@@ -149,6 +211,7 @@ const FlexLayout = (props: Props) => {
       factory={factory}
       onModelChange={onModelChange}
       onRenderTab={onRenderTab}
+      onExternalDrag={onExternalDragDrop}
       {...flProps}
     />
   );

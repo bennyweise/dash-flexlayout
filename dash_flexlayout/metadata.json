@@ -1,4 +1,59 @@
 {
+  "src/ts/components/DragFrom.tsx": {
+    "displayName": "DragFrom",
+    "description": "",
+    "props": {
+      "effectAllowed": {
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "transferType": {
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "name": {
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "id": {
+        "description": "Unique ID to identify this component in Dash callbacks.",
+        "required": false,
+        "type": {
+          "name": "string",
+          "raw": "string"
+        }
+      },
+      "setProps": {
+        "description": "Update props to trigger callbacks.",
+        "required": true,
+        "type": {
+          "name": "func",
+          "raw": "(props: Record<string, any>) => void"
+        }
+      },
+      "children": {
+        "description": "",
+        "required": false,
+        "type": {
+          "name": "node",
+          "raw": "ReactNode"
+        }
+      }
+    },
+    "isContext": false
+  },
   "src/ts/components/FlexLayout.tsx": {
     "displayName": "FlexLayout",
     "description": "Component description",
